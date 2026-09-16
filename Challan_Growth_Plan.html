@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoora Challan Growth & Marketing POA</title>
+<style>
+:root{
+  --navy:#14213d; --blue:#2457d6; --blue2:#eaf0ff; --ink:#182230;
+  --muted:#687386; --line:#dfe5ef; --bg:#f6f8fc; --white:#fff;
+  --green:#087f5b; --greenbg:#e9f8f2; --amber:#9a6500; --amberbg:#fff6dc;
+  --red:#a61b3c; --redbg:#fff0f3; --purple:#6541b8; --purplebg:#f3efff;
+  --shadow:0 10px 30px rgba(20,33,61,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);line-height:1.55}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1440px;margin:auto;padding:14px 24px;display:flex;align-items:center;gap:24px}
+.brand{font-weight:800;color:var(--navy);white-space:nowrap}
+.tabs{display:flex;gap:6px;overflow:auto}
+.tabs a{padding:8px 12px;border-radius:9px;color:#4d5a70;font-size:13px;font-weight:700;white-space:nowrap}
+.tabs a:hover{background:var(--blue2);color:var(--blue);text-decoration:none}
+.layout{max-width:1440px;margin:auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px;padding:28px 24px}
+.sidebar{position:sticky;top:78px;height:calc(100vh - 100px);overflow:auto;padding:16px;background:var(--white);border:1px solid var(--line);border-radius:16px}
+.sidebar h4{margin:4px 0 12px;color:var(--navy);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.sidebar a{display:block;padding:8px 10px;border-radius:8px;color:#526076;font-size:13px}
+.sidebar a:hover{background:var(--blue2);color:var(--blue);text-decoration:none}
+main{min-width:0}
+.hero{background:linear-gradient(135deg,#14213d 0%,#244eaa 100%);color:white;border-radius:22px;padding:42px;box-shadow:var(--shadow);margin-bottom:24px}
+.hero .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;opacity:.75;font-weight:800}
+.hero h1{font-size:42px;line-height:1.1;margin:10px 0 14px;max-width:900px}
+.hero p{font-size:18px;max-width:900px;opacity:.9}
+.hero-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.hero-stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:16px}
+.hero-stat strong{display:block;font-size:25px}.hero-stat span{font-size:12px;opacity:.8}
+section{scroll-margin-top:90px;margin-bottom:30px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin:36px 0 16px}
+.section-head h2{margin:0;color:var(--navy);font-size:28px;line-height:1.2}
+.section-head p{margin:4px 0 0;color:var(--muted)}
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 5px 18px rgba(20,33,61,.04)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.kpi{padding:20px;border-radius:14px;border:1px solid var(--line);background:#fff}
+.kpi .n{font-size:30px;font-weight:850;color:var(--navy);letter-spacing:-.03em}
+.kpi .l{font-size:12px;text-transform:uppercase;letter-spacing:.06em;font-weight:800;color:#647086}
+.kpi .s{font-size:12px;color:var(--muted);margin-top:4px}
+.callout{border-left:4px solid var(--blue);background:var(--blue2);padding:16px 18px;border-radius:10px;margin:14px 0}
+.callout.green{border-color:var(--green);background:var(--greenbg)}
+.callout.amber{border-color:#d79a18;background:var(--amberbg)}
+.callout.red{border-color:#d83d5d;background:var(--redbg)}
+.callout.purple{border-color:var(--purple);background:var(--purplebg)}
+h3{color:var(--navy);margin:0 0 10px;font-size:19px}
+h4{color:var(--navy);margin:18px 0 8px}
+p{margin:8px 0}
+ul,ol{padding-left:20px}
+li{margin:5px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:#f2f5fa;color:#445169;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+th,td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;padding:4px 8px;border-radius:999px;background:var(--blue2);color:var(--blue);font-size:11px;font-weight:800}
+.pill.green{background:var(--greenbg);color:var(--green)}
+.pill.amber{background:var(--amberbg);color:var(--amber)}
+.pill.red{background:var(--redbg);color:var(--red)}
+.timeline{display:grid;gap:12px}
+.phase{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:start}
+.phase-num{background:var(--navy);color:white;border-radius:12px;padding:12px;text-align:center;font-weight:800}
+.phase-body{background:white;border:1px solid var(--line);border-radius:14px;padding:18px}
+.phase-body h3{margin-bottom:4px}
+.task{display:inline-block;margin:4px 5px 4px 0;padding:5px 9px;background:#f3f6fb;border:1px solid #e4e9f1;border-radius:7px;font-size:12px}
+.channel{border-top:4px solid var(--blue);padding-top:14px}
+.channel.green{border-color:var(--green)} .channel.purple{border-color:var(--purple)} .channel.amber{border-color:#d79a18}
+.quote{font-size:19px;font-weight:750;color:var(--navy);padding:18px 0}
+.metric-bar{height:9px;background:#e8edf5;border-radius:99px;overflow:hidden;margin:8px 0 14px}
+.metric-bar span{display:block;height:100%;background:var(--blue);border-radius:99px}
+.source{font-size:12px;color:#647086;border-top:1px solid var(--line);margin-top:16px;padding-top:10px}
+.source strong{color:#445169}
+.footer{color:#69758a;font-size:12px;padding:20px 0 60px}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}.sidebar{display:none}.hero-grid{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr 1fr}.grid4{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.topbar-inner{padding:10px 14px}.brand{display:none}.layout{padding:16px}.hero{padding:26px}.hero h1{font-size:31px}.hero-grid,.grid2,.grid3,.grid4{grid-template-columns:1fr}.phase{grid-template-columns:1fr}}
+
+    .iref{color:inherit;text-decoration:none;font-weight:600;white-space:nowrap;}
+    .iref:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">HOORA · CHALLAN GROWTH POA</div>
+    <nav class="tabs">
+      <a href="#executive">Executive</a>
+      <a href="#opportunity">Opportunity</a>
+      <a href="#crm">CRM</a>
+      <a href="#content">Content & SEO</a>
+      <a href="#social">Social & PR</a>
+      <a href="#paid">Paid</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#measurement">Measurement</a>
+      <a href="#governance">Governance</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </div>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+  <h4>Plan navigation</h4>
+  <a href="#executive">1. Executive thesis</a>
+  <a href="#opportunity">2. First-party opportunity</a>
+  <a href="#market">3. Market evidence</a>
+  <a href="#architecture">4. Growth architecture</a>
+  <a href="#crm">5. WhatsApp + In-App</a>
+  <a href="#crosssell">6. Cross-promotion</a>
+  <a href="#content">7. Content + SEO + GEO</a>
+  <a href="#landing">8. Landing pages</a>
+  <a href="#social">9. Social + creative</a>
+  <a href="#pr">10. PR + partnerships</a>
+  <a href="#paid">11. Paid acquisition</a>
+  <a href="#timeline">12. 30 / 60 / 90 days</a>
+  <a href="#calendar">13. Campaign calendar</a>
+  <a href="#measurement">14. Measurement</a>
+  <a href="#economics">15. Budget & economics</a>
+  <a href="#governance">16. Governance & compliance</a>
+  <a href="#sources">17. Source index</a>
+</aside>
+
+<main>
+<section class="hero" id="executive">
+  <div class="eyebrow">Vehicle compliance growth strategy · September 2026</div>
+  <h1>Hoora Challan Growth & Marketing Plan of Action</h1>
+  <p><b>Core thesis:</b> monetise first-party intent before buying incremental intent. Start with WhatsApp and In-App activation, build the organic content and landing-page moat in parallel, then use Meta lookalikes and Google Search to scale.</p>
+  <div class="hero-grid">
+    <div class="hero-stat"><strong>44,726</strong><span>Users who searched</span></div>
+    <div class="hero-stat"><strong>12,586</strong><span>Users who fetched challans</span></div>
+    <div class="hero-stat"><strong>5,375</strong><span>Unique retargetable users</span></div>
+    <div class="hero-stat"><strong>₹3.55 Cr</strong><span>Unpaid order value</span></div>
+  </div>
+</section>
+
+<section id="opportunity">
+  <div class="section-head"><div><h2>1. The first-party opportunity</h2><p>Hoora already owns a high-intent audience that can be activated before incremental media spend.</p></div></div>
+  <div class="grid4">
+    <div class="kpi"><div class="n">44,726</div><div class="l">Users searched</div><div class="s">Distinct users with non-empty vehicle search</div></div>
+    <div class="kpi"><div class="n">12,586</div><div class="l">Fetched challans</div><div class="s">Users whose search returned ≥1 challan</div></div>
+    <div class="kpi"><div class="n">7,871</div><div class="l">2+ challans</div><div class="s">High-intent users with multiple violations</div></div>
+    <div class="kpi"><div class="n">34,320</div><div class="l">Court challans</div><div class="s">A major differentiator for assisted resolution</div></div>
+  </div>
+  <div class="grid4" style="margin-top:14px">
+    <div class="kpi"><div class="n">55,392</div><div class="l">Unique challans</div><div class="s">Total distinct violation tickets</div></div>
+    <div class="kpi"><div class="n">6,223</div><div class="l">Orders created</div><div class="s">Checkout/order initiation</div></div>
+    <div class="kpi"><div class="n">379</div><div class="l">Paid orders</div><div class="s">Successful payments</div></div>
+    <div class="kpi"><div class="n">5,837</div><div class="l">Unpaid / dropped</div><div class="s">Immediate recovery pool</div></div>
+  </div>
+  <div class="callout red"><b>Immediate commercial opportunity:</b> 5,375 unique users are currently identified as retargetable, with approximately ₹3.55 Cr of unpaid order value. The created → paid conversion shown in the dashboard is only 6.1%, so the first marketing job is recovery and conversion, not cold acquisition.</div>
+</section>
+
+<section id="market">
+  <div class="section-head"><div><h2>2. Market evidence & demand signals</h2><p>Public data and the competitive research establish that challan is a large, recurring digital demand category.</p></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>National digital enforcement scale</h3>
+      <p>A Government of India parliamentary response cited in the research reports 35.79 crore e-challans and approximately ₹53,715 crore in associated fines as of 29 July 2025.</p>
+      <p><b>Implication:</b> challan resolution is not a small automotive utility; it is a large national compliance workflow.</p>
+      <div class="source"><strong>Public source:</strong> Government of India / Lok Sabha parliamentary material. Verify the exact current figure before external publication.</div>
+    </div>
+    <div class="card">
+      <h3>Road-safety context</h3>
+      <p>MoRTH's 2023 road-accident reporting recorded 480,583 road accidents in India, underscoring the continuing public-interest context around road safety and compliance.</p>
+      <p><b>Implication:</b> Hoora's PR and content layer should lead with road safety, compliance and responsible vehicle ownership rather than pure sales messaging.</p>
+      <div class="source"><strong>Public source:</strong> Ministry of Road Transport & Highways, Road Accidents in India 2023.</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Competitive demand map from the research</h3>
+    <table>
+      <tr><th>Query cluster</th><th>Observed variants</th><th>Strategic implication</th></tr>
+      <tr><td>Check / status</td><td>713</td><td>Largest demand cluster; useful for SEO and paid capture.</td></tr>
+      <tr><td>City / state modified</td><td>495</td><td>Supports scalable local landing pages and geo campaigns.</td></tr>
+      <tr><td>Pay intent</td><td>451</td><td>High-commercial-intent Search layer.</td></tr>
+      <tr><td>Court / legal</td><td>291</td><td>Strong Hoora differentiation if operational coverage is valid.</td></tr>
+      <tr><td>Hinglish / vernacular</td><td>269</td><td>Supports Hindi/Hinglish/Marathi creative and landing-page variants.</td></tr>
+      <tr><td>Discount / waiver</td><td>59</td><td>Smaller but highly relevant around Lok Adalat and state amnesty windows.</td></tr>
+    </table>
+    <div class="source">Source: Hoora Challan Ads Playbook, competitive study based on Google Ads Transparency Centre + live SERPs in Nagpur, 1,992 keyword suggestions captured 14 Sep 2026. <a class="iref" href="#internal-research">[IR-4]</a></div>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="section-head"><div><h2>3. Growth architecture</h2><p>Build the system in layers. Owned channels first, paid channels progressively.</p></div></div>
+  <div class="card">
+    <div class="quote">Own the audience first. Then buy the audience.</div>
+    <table>
+      <tr><th>Layer</th><th>Role</th><th>Priority</th><th>Primary KPI</th></tr>
+      <tr><td><b>1. First-party CRM</b></td><td>Recover known intent and cross-sell existing Hoora users.</td><td><span class="pill">Days 1–30</span></td><td>Resolved challans / CRM conversion</td></tr>
+      <tr><td><b>2. In-App</b></td><td>Use owned app inventory at moments of high vehicle intent.</td><td><span class="pill">Days 1–30</span></td><td>CTA → results → order</td></tr>
+      <tr><td><b>3. Content + SEO/GEO</b></td><td>Capture evergreen and local informational demand.</td><td><span class="pill green">Day 1 onward</span></td><td>Qualified organic sessions</td></tr>
+      <tr><td><b>4. Social + PR</b></td><td>Build trust, education and shareable public-interest narratives.</td><td><span class="pill green">Days 15–60</span></td><td>Reach + qualified traffic</td></tr>
+      <tr><td><b>5. Meta lookalikes</b></td><td>Scale audiences resembling converters and high-intent users.</td><td><span class="pill amber">Days 30–60</span></td><td>Cost per resolved challan</td></tr>
+      <tr><td><b>6. Google Search</b></td><td>Capture incremental bottom-funnel demand.</td><td><span class="pill amber">Days 30–90</span></td><td>Paid → paid → settled</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="crm">
+  <div class="section-head"><div><h2>4. WhatsApp + In-App activation</h2><p>WebEngage becomes the audience and trigger layer; Interakt becomes the WhatsApp execution layer.</p></div></div>
+  <div class="grid3">
+    <div class="card channel"><h3>Created → unpaid</h3><p>Highest-priority cohort. Trigger recovery sequences based on recency and order status.</p><p><b>Message:</b> “Your challan resolution is incomplete.”</p></div>
+    <div class="card channel green"><h3>2+ challans</h3><p>High-intent cohort. Focus on convenience and resolving multiple pending violations.</p><p><b>Message:</b> “Multiple challans? Resolve them together with Hoora.”</p></div>
+    <div class="card channel purple"><h3>Court challans</h3><p>Use assisted/legal-resolution messaging only where operational coverage is confirmed.</p><p><b>Message:</b> “Need help with a court challan? Hoora can connect you with legal assistance.”</p></div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Audience rules</h3>
+    <table>
+      <tr><th>Cohort</th><th>Trigger</th><th>Message angle</th><th>Cadence</th><th>Suppress when</th></tr>
+      <tr><td>Searched, no fetch</td><td>Search completed</td><td>“Check what is pending”</td><td>1–2 touches</td><td>New result / user opts out</td></tr>
+      <tr><td>0 challans</td><td>Clean result</td><td>Peace of mind / compliance</td><td>Low</td><td>New challan appears</td></tr>
+      <tr><td>1 challan</td><td>Open pending record</td><td>Resolve before it becomes a bigger issue</td><td>Medium</td><td>Paid / disposed</td></tr>
+      <tr><td>2+ challans</td><td>Multiple open records</td><td>Resolve multiple challans</td><td>High</td><td>All resolved</td></tr>
+      <tr><td>Created unpaid</td><td>Order created, payment absent</td><td>Complete resolution</td><td>Day 0 / 1 / 3 / 7 / 14 / 21 / 30</td><td>Payment / disposal</td></tr>
+    </table>
+  </div>
+  <div class="callout green"><b>Data principle:</b> do not pay for a fresh third-party lookup merely to ask whether a historical user still has a challan if Hoora's internal record already shows an unresolved challan. Use the freshest internal status available, define a recency window, and suppress users once paid/disposed.</div>
+  <div class="callout amber"><b>WhatsApp governance:</b> ensure lawful opt-in, approved templates where required, suppression/opt-out logic, frequency controls and a clear source of truth for payment/disposal status.</div>
+</section>
+
+<section id="crosssell">
+  <div class="section-head"><div><h2>5. Cross-promotion across Hoora</h2><p>Make challan discovery a horizontal vehicle-compliance feature across every Hoora touchpoint.</p></div></div>
+  <div class="grid4">
+    <div class="card"><h3>Car wash</h3><p>“Car clean. Documents clean? Check your pending challans.”</p></div>
+    <div class="card"><h3>PMS</h3><p>Service completion screen → challan check CTA.</p></div>
+    <div class="card"><h3>Insurance</h3><p>Renewal journey → vehicle compliance check.</p></div>
+    <div class="card"><h3>FASTag</h3><p>Post-transaction → challan check CTA.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Service-partner distribution</h3>
+    <ol>
+      <li>QR cards at partner locations.</li>
+      <li>Challan CTA on service receipts and invoices.</li>
+      <li>Technician/service-advisor one-line pitch.</li>
+      <li>Partner referral attribution.</li>
+      <li>Commission only after a successfully paid/resolved transaction.</li>
+    </ol>
+    <div class="quote">“Sir/Ma’am, Hoora can check whether this vehicle has any pending challans and help resolve them. Scan here to check.”</div>
+  </div>
+</section>
+
+<section id="content">
+  <div class="section-head"><div><h2>6. Content + SEO + GEO</h2><p>Build a durable organic acquisition layer while CRM is monetising existing demand.</p></div></div>
+  <div class="grid3">
+    <div class="card"><h3>50–60 landing pages</h3><p>Generic intent, state, city, court/legal, discount, status and vernacular clusters.</p></div>
+    <div class="card"><h3>30–60 articles</h3><p>How-to, explainers, FAQs, Lok Adalat, court challan, local processes and compliance topics.</p></div>
+    <div class="card"><h3>Original data</h3><p>Use anonymised Hoora insights to create an annual India Challan & Vehicle Compliance report.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>Editorial architecture</h3>
+    <table>
+      <tr><th>Cluster</th><th>Examples</th><th>Purpose</th></tr>
+      <tr><td>Check</td><td>Check challan by vehicle number; challan status</td><td>Capture high-volume informational demand.</td></tr>
+      <tr><td>Payment</td><td>Pay traffic challan online; e-challan payment</td><td>Capture commercial intent.</td></tr>
+      <tr><td>Court</td><td>Court challan; virtual court challan; challan lawyer</td><td>Build differentiated legal-resolution authority.</td></tr>
+      <tr><td>Discount</td><td>Challan discount; Lok Adalat; waiver</td><td>Time-bound demand spikes.</td></tr>
+      <tr><td>Local</td><td>State/city challan pages</td><td>Geo-intent and local relevance.</td></tr>
+      <tr><td>Vernacular</td><td>Hindi/Hinglish/Marathi queries</td><td>Expand beyond English search behaviour.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="landing">
+  <div class="section-head"><div><h2>7. Landing-page system</h2><p>Search and CRM traffic need a dedicated, results-first challan experience.</p></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Above the fold</h3>
+      <ul>
+        <li>Clear “Check / resolve pending challan” proposition.</li>
+        <li>Vehicle-number entry.</li>
+        <li>Results before unnecessary friction where technically feasible.</li>
+        <li>Trust and private-provider disclosure.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Proof & conversion</h3>
+      <ul>
+        <li>Online vs court explanation.</li>
+        <li>Eligible discount proposition with “where eligible”.</li>
+        <li>Legal fee + GST transparency before payment.</li>
+        <li>Refund / SLA terms.</li>
+        <li>Testimonials with city and amount where substantiated.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout red"><b>Priority technical fixes identified in the research:</b> generic Vehicle 360 positioning, a challan URL rendering unrelated/investor content, a 404 discount post, likely OTP friction before results, and broken/near-broken destination paths. The research recommends results-first UX, a differentiator band, fee/disclosure block, corrected URLs, canonicalisation and complete conversion tracking. <a class="iref" href="#internal-research">[IR-5]</a> <a class="iref" href="#internal-research">[IR-5]</a></div>
+</section>
+
+<section id="social">
+  <div class="section-head"><div><h2>8. Social & creative repository</h2><p>Build reusable assets once, then rotate them across organic, CRM and paid placements.</p></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>20 static assets</h3>
+      <table>
+        <tr><th>Bucket</th><th>Qty</th><th>Examples</th></tr>
+        <tr><td>Education</td><td>5</td><td>Court vs online, Lok Adalat, status, settlement</td></tr>
+        <tr><td>Product</td><td>5</td><td>Check, pay, court, support, receipt</td></tr>
+        <tr><td>Trust</td><td>5</td><td>Reviews, resolution stories, proof</td></tr>
+        <tr><td>Urgency</td><td>5</td><td>Pending, multiple challans, event windows</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h3>10 video / Reel concepts</h3>
+      <ol>
+        <li>What happens after you check a challan?</li>
+        <li>Online vs court challan.</li>
+        <li>What does 2+ challans mean?</li>
+        <li>How Lok Adalat works.</li>
+        <li>What happens when a challan stays unresolved?</li>
+        <li>Challan resolution story.</li>
+        <li>How to identify court challan.</li>
+        <li>Legal-assistance explainer.</li>
+        <li>Check → understand → resolve.</li>
+        <li>Customer testimonial.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout">Messaging should centre on <b>peace of mind, vehicle compliance, quick resolution, court-challan assistance, transparent fees, customer support and eligible discounts</b>. Avoid unsupported absolutes and substantiate every numeric claim.</div>
+</section>
+
+<section id="pr">
+  <div class="section-head"><div><h2>9. PR, road-safety and partnerships</h2><p>Build public-interest credibility rather than making every activation a sales event.</p></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Road Safety & Vehicle Compliance Run</h3>
+      <p>Potential cities: Mumbai, Nagpur, Bengaluru and Delhi.</p>
+      <p>Potential legal/knowledge partner: Lawyered.</p>
+      <p>Potential public-agency participation: only through formal approvals and appropriate protocols.</p>
+      <p><b>Theme:</b> road safety, responsible driving, vehicle compliance and digital awareness.</p>
+    </div>
+    <div class="card">
+      <h3>India Challan & Vehicle Compliance Report</h3>
+      <p>Use anonymised internal data to publish original insights around online vs court challans, multiple violations, resolution patterns and local trends.</p>
+      <p>This becomes a PR asset, SEO asset, social series, media hook and backlink engine.</p>
+    </div>
+  </div>
+  <div class="callout green"><b>Why PR fits:</b> the road-safety context is substantial, and the programme can be positioned around education and compliance. Commercial promotion should remain secondary to the public-interest purpose.</div>
+</section>
+
+<section id="paid">
+  <div class="section-head"><div><h2>10. Paid acquisition: progressively layered</h2><p>Paid media begins after owned-audience activation, landing-page readiness and measurement validation.</p></div></div>
+  <div class="card">
+    <h3>Google Search campaign architecture</h3>
+    <table>
+      <tr><th>#</th><th>Campaign</th><th>Intent</th><th>Indicative test share</th></tr>
+      <tr><td>1</td><td>Pay intent</td><td>pay challan online, e-challan payment, traffic challan payment</td><td>30%</td></tr>
+      <tr><td>2</td><td>Court & legal</td><td>court challan, virtual court, challan lawyer, settlement, Lok Adalat</td><td>20%</td></tr>
+      <tr><td>3</td><td>Discount & waiver</td><td>discount, waiver, settlement</td><td>10% → 30% in event windows</td></tr>
+      <tr><td>4</td><td>Check & status</td><td>check by vehicle number, pending challan, status</td><td>15%</td></tr>
+      <tr><td>5</td><td>Hindi / Hinglish / Marathi</td><td>vernacular intent</td><td>10%</td></tr>
+      <tr><td>6</td><td>Geo</td><td>city/state modified intent</td><td>10%</td></tr>
+      <tr><td>7</td><td>Brand</td><td>Hoora challan searches</td><td>2%</td></tr>
+      <tr><td>8</td><td>Conquest</td><td>competitor terms, opt-in only</td><td>3%</td></tr>
+    </table>
+    <div class="source">Source: Hoora Challan Ads Playbook campaign architecture. <a class="iref" href="#internal-research">[IR-6]</a></div>
+  </div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3>Meta</h3><ul><li>Created-challan lookalike.</li><li>Paid/resolved lookalike.</li><li>2+ challan lookalike.</li><li>Court-challan audience where policy and data use permit.</li><li>Retargeting of results-shown / unpaid users.</li></ul></div>
+    <div class="card"><h3>Scale rule</h3><p>Do not commit the full test budget until Phase 0 establishes actual CPC, payment rate, settled rate, contribution per resolved challan and operational capacity.</p><p>The research itself labels ₹2–3 lakh/month, ₹8–35 CPC and 4–10% search-to-payment as planning assumptions, not Hoora data. <a class="iref" href="#internal-research">[IR-7]</a></p></div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="section-head"><div><h2>11. 30 / 60 / 90-day execution plan</h2><p>Front-load owned channels and infrastructure; progressively add paid acquisition.</p></div></div>
+  <div class="timeline">
+    <div class="phase"><div class="phase-num">DAYS<br>1–7</div><div class="phase-body"><h3>Build the engine</h3><p>Audience segmentation, suppression logic, WebEngage journeys, Interakt templates, tracking, landing-page fixes.</p><span class="task">8–10 CRM cohorts</span><span class="task">5–7 WA templates</span><span class="task">5 In-App journeys</span><span class="task">QA</span></div></div>
+    <div class="phase"><div class="phase-num">DAYS<br>8–14</div><div class="phase-body"><h3>Launch first-party activation</h3><p>Start created-unpaid, 2+ challan and court cohorts. Add cross-sell placements inside Hoora service journeys.</p><span class="task">WA recovery</span><span class="task">In-App</span><span class="task">Partner QR</span><span class="task">5 landing pages</span></div></div>
+    <div class="phase"><div class="phase-num">DAYS<br>15–21</div><div class="phase-body"><h3>Build organic demand</h3><p>Publish the first content batch and start the creative repository. Build state/city and court/legal landing pages.</p><span class="task">20 static assets</span><span class="task">5 Reels</span><span class="task">10 articles</span><span class="task">10–15 LPs</span></div></div>
+    <div class="phase"><div class="phase-num">DAYS<br>22–30</div><div class="phase-body"><h3>Prepare paid scale</h3><p>Meta audience seeds, Google Search structure, conversion tracking, policy review, small controlled paid tests.</p><span class="task">Lookalikes</span><span class="task">Search 1–4</span><span class="task">GA4/GTM</span><span class="task">Policy QA</span></div></div>
+    <div class="phase"><div class="phase-num">DAYS<br>31–60</div><div class="phase-body"><h3>Scale the flywheel</h3><p>Expand content, paid social and Search. Add vernacular and geo campaigns. Launch PR / road-safety initiative.</p><span class="task">30–40 LPs</span><span class="task">25–30 articles</span><span class="task">Meta prospecting</span><span class="task">Google Search expansion</span></div></div>
+    <div class="phase"><div class="phase-num">DAYS<br>61–90</div><div class="phase-body"><h3>Optimise economics</h3><p>Move from order optimisation to paid/resolved/settled value. Expand to the full campaign architecture where unit economics and policy allow.</p><span class="task">50–60 LPs</span><span class="task">Value bidding</span><span class="task">Offline settled conversion</span><span class="task">Quarterly competitor scan</span></div></div>
+  </div>
+</section>
+
+<section id="calendar">
+  <div class="section-head"><div><h2>12. Trigger-based campaign calendar</h2><p>Challan demand is event-driven as well as evergreen.</p></div></div>
+  <div class="card">
+    <table>
+      <tr><th>Trigger</th><th>T-30</th><th>T-14</th><th>T-7</th><th>T-1 / T+1</th></tr>
+      <tr><td><b>National Lok Adalat</b></td><td>Explainer + eligibility content</td><td>WhatsApp + landing page</td><td>High-intent CRM + paid burst</td><td>Reminder + unresolved follow-up</td></tr>
+      <tr><td><b>State amnesty / discount drive</b></td><td>Local SEO page</td><td>Social education</td><td>Search + CRM burst</td><td>Urgency + resolution proof</td></tr>
+      <tr><td><b>Weekend traffic courts</b></td><td>Evergreen court guide</td><td>Local court content</td><td>Geo bid/copy adjustment</td><td>Last-mile CRM</td></tr>
+    </table>
+  </div>
+  <div class="callout amber"><b>2026 reference:</b> NALSA state legal-services authorities publish the National Lok Adalat schedule. The 2026 dates include 14 March, 9 May, 12 September and 12 December. Campaign calendars should be rebuilt from official schedules each year. citeturn0search3turn0search7</div>
+</section>
+
+<section id="measurement">
+  <div class="section-head"><div><h2>13. Measurement framework</h2><p>Measure the complete path from intent to successful resolution.</p></div></div>
+  <div class="card">
+    <table>
+      <tr><th>Layer</th><th>Event / metric</th><th>Use</th></tr>
+      <tr><td>Web</td><td>challan_vrn_submitted</td><td>Search intent</td></tr>
+      <tr><td>Web</td><td>challan_results_shown</td><td>Qualified discovery</td></tr>
+      <tr><td>Web</td><td>challan_order_created</td><td>Commercial intent</td></tr>
+      <tr><td>Web</td><td>challan_payment_success</td><td>Primary conversion</td></tr>
+      <tr><td>App</td><td>echallan_search / order_created / payment_success</td><td>App funnel and Google Ads import</td></tr>
+      <tr><td>Offline</td><td>challan_settled</td><td>True business outcome</td></tr>
+      <tr><td>CRM</td><td>WA delivered/read/click/conversion; In-App impression/click/conversion</td><td>Owned-channel economics</td></tr>
+    </table>
+    <div class="source">Source: Hoora Challan Ads Playbook measurement specification. <a class="iref" href="#internal-research">[IR-7]</a></div>
+  </div>
+  <div class="grid3" style="margin-top:16px">
+    <div class="kpi"><div class="n">Primary</div><div class="l">Cost / resolved challan</div><div class="s">Business outcome</div></div>
+    <div class="kpi"><div class="n">Secondary</div><div class="l">Payment conversion</div><div class="s">Checkout efficiency</div></div>
+    <div class="kpi"><div class="n">North Star</div><div class="l">Contribution / resolved</div><div class="s">Unit economics</div></div>
+  </div>
+</section>
+
+<section id="economics">
+  <div class="section-head"><div><h2>14. Budget & economics</h2><p>Spend follows validated economics, not the other way around.</p></div></div>
+  <div class="card">
+    <table>
+      <tr><th>Stage</th><th>Media posture</th><th>Decision gate</th></tr>
+      <tr><td>Days 1–30</td><td>Minimal paid test; focus on CRM, content and landing infrastructure.</td><td>CRM conversion + landing conversion + operational SLA</td></tr>
+      <tr><td>Days 31–60</td><td>Controlled Meta lookalikes + Google Search.</td><td>Actual CPC, CPA, payment rate, settled rate</td></tr>
+      <tr><td>Days 61–90</td><td>Scale winning campaigns and geographies.</td><td>Contribution and capacity</td></tr>
+      <tr><td>Month 4+</td><td>Value-based scale across Search, Meta, SEO and partnerships.</td><td>Incremental resolved volume at acceptable contribution</td></tr>
+    </table>
+    <div class="callout">The earlier research suggested a six-week ₹2–3 lakh/month paid-search test, but explicitly labelled CPC and conversion figures as planning assumptions. Treat that number as a ceiling for a validated experiment, not as the starting commitment. <a class="iref" href="#internal-research">[IR-7]</a></div>
+  </div>
+</section>
+
+<section id="governance">
+  <div class="section-head"><div><h2>15. Governance, claims & compliance</h2><p>Build trust into the product and marketing system.</p></div></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>Claim governance</h3>
+      <ul>
+        <li>Substantiate every numeric claim.</li>
+        <li>Use “where eligible” for discount/waiver claims.</li>
+        <li>Publish refund/SLA terms.</li>
+        <li>Verify lawyer-network count before publishing.</li>
+        <li>Do not imply government affiliation.</li>
+        <li>Keep court-service coverage aligned to actual operational states.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Google Ads policy</h3>
+      <p>Google's government-documents/services policy can restrict or require certification for ads promoting direct access to government documents/services. Private providers must not misrepresent government affiliation and may need clear private-provider disclosure and links to official government sites. A policy update is scheduled for 5 October 2026.</p>
+      <p><a href="https://support.google.com/adspolicy/answer/6368711?hl=en" target="_blank">Google Ads: Other restricted businesses</a><br>
+      <a href="https://support.google.com/adspolicy/answer/17260489?hl=en" target="_blank">Google policy update effective 5 Oct 2026</a></p>
+    </div>
+  </div>
+  <div class="callout red"><b>Guarantee wording:</b> if Hoora offers “100% refund” for failure to meet a 7-day online / 30-day court resolution SLA, the exact eligibility, exclusions, refund basis and dependency on external authorities must be written into terms before the claim is used at scale.</div>
+  <div class="callout amber"><b>Network claim:</b> the strategy can use a lawyer-network message only after the current, Hoora-available network figure is verified. The research observed public competitor claims in the ~70k–80k range; do not publish an unverified “93,000 lawyers” figure.</div>
+</section>
+
+<section id="sources">
+  <div class="section-head"><div><h2>16. Source index</h2><p>Source hierarchy used to build this plan.</p></div></div>
+  <div class="card">
+    <h3 id="internal-research">Internal research source</h3>
+    <p><b>Hoora Challan Ads Playbook · 14 Sep 2026</b></p>
+    <ul>
+      <li>Competitive market map and ad-footprint observations. <a class="iref" href="#internal-research">[IR-1]</a></li>
+      <li>Keyword demand clusters and whitespace. <a class="iref" href="#internal-research">[IR-2]</a></li>
+      <li>Competitor positioning and observed weaknesses. <a class="iref" href="#internal-research">[IR-3]</a></li>
+      <li>Hoora messaging whitespace: discounts, refund, legal fee transparency, lawyer representation, receipt and vernacular. <a class="iref" href="#internal-research">[IR-4]</a></li>
+      <li>Landing-page and technical fixes. <a class="iref" href="#internal-research">[IR-5]</a></li>
+      <li>Campaign architecture. <a class="iref" href="#internal-research">[IR-6]</a></li>
+      <li>Measurement and planning assumptions. <a class="iref" href="#internal-research">[IR-7]</a></li>
+      <li>Calendar, compliance and operational safeguards. <a class="iref" href="#internal-research">[IR-8]</a></li>
+    </ul>
+    <h3 style="margin-top:22px">Public references</h3>
+    <ul>
+      <li><a href="https://sansad.in/" target="_blank">Parliament of India / Lok Sabha</a> — government parliamentary source for national eChallan figures cited in the strategy.</li>
+      <li><a href="https://morth.nic.in/" target="_blank">Ministry of Road Transport & Highways</a> — Road Accidents in India reporting.</li>
+      <li><a href="https://nalsa.gov.in/" target="_blank">National Legal Services Authority</a> — Lok Adalat framework and schedules.</li>
+      <li><a href="https://support.google.com/adspolicy/answer/6368711?hl=en" target="_blank">Google Ads policy — Government documents and services</a>.</li>
+      <li><a href="https://support.google.com/adspolicy/answer/17260489?hl=en" target="_blank">Google Ads policy update effective 5 October 2026</a>.</li>
+      <li><a href="https://support.google.com/adspolicy/answer/15936666?hl=en" target="_blank">Google Ads — Misrepresentation policy</a>.</li>
+    </ul>
+  </div>
+  <div class="footer">Prepared as a new Hoora challan growth strategy using the supplied internal dashboard, the attached competitive research and selected public sources. Public statistics and policy requirements should be re-verified immediately before external publication or paid launch.</div>
+</section>
+</main>
+</div>
+</body>
+</html>
